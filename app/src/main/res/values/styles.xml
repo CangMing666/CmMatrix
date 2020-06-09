@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="BtnStylle">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>

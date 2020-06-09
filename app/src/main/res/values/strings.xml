@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CmMatrix</string>
+    <string name="monitor_detail">监控信息</string>
+    <string name="data_remote">创建一个数据进程</string>
+    <string name="remote">创建一个进程</string>
+    <string name="jump_third_page">跳转第三个页面</string>
+    <string name="gc_monitor_test">Gc 监控测试</string>
+    <string name="okhttp_monitor_test">Okhttp网络请求监控测试</string>
+    <string name="crash_monitor_test">Crash 监控测试测试</string>
+    <string name="anr_monitor_test">ANR 监控测试</string>
 </resources>

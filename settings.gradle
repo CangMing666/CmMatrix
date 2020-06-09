@@ -1,2 +1,3 @@
 rootProject.name='CmMatrix'
 include ':app'
+include ':cmmatrix'

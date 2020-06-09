@@ -1,0 +1,51 @@
+def config = rootProject.ext
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "SDK_VERSION", "\"${config.deployMonitorVersion}\""
+
+            minifyEnabled false
+        }
+        release {
+            buildConfigField "String", "SDK_VERSION", "\"${config.deployMonitorVersion}\""
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            java {
+                srcDirs 'src/main/java'
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation commDependencies.cmthreadhook
+    implementation commDependencies.asm
+    implementation commDependencies.commons
+    implementation commDependencies.retrofit
+    implementation commDependencies.mmkv
+    implementation commDependencies.gson
+}
