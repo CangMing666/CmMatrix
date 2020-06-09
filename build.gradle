@@ -3,6 +3,12 @@
 buildscript {
 
     ext {
+
+        lintVersion = '26.0.1'
+        kotlinVersion = '1.2.31'
+        androidGradleVersion = '3.0.0'
+        assistVersion = '3.24.0-GA'
+
         // 统一项目环境
         develop = true
 
@@ -32,14 +38,17 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
+        maven {
+            url uri('./repo')
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.3'
         // jcenter 上传
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
-
+//        classpath "com.didichuxing.tools:droidassist:1.1.0"
+        classpath "me.cangming.monitor:plugin:1.0.1"
     }
 }
 
@@ -49,6 +58,9 @@ allprojects {
         jcenter()
         maven {
             url "https://dl.bintray.com/yangzhe/maven"
+        }
+        maven {
+            url uri('./repo')
         }
     }
 }

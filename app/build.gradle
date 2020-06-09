@@ -40,3 +40,11 @@ dependencies {
     implementation project(path: ':cmmatrix')
 
 }
+
+apply plugin: 'com.didichuxing.tools.droidassist'
+droidAssistOptions {
+    enable true
+    logLevel 3
+    config file("droidassist.xml")
+    logDir file("${project.buildDir.absolutePath}/logs")
+}
